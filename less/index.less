@@ -1,59 +1,250 @@
-// Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
-/* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  box-sizing: border-box;
+  font: inherit;
+  max-width: 100%;
 }
 
-html, body {
-    height: 100%;
+html,
+body {
+  height: 100%;
 }
 
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Asap:wght@500&family=Montserrat&display=swap');
+
+/* Variables and mix-ins */
+@content-width: 800px;
+@blue-box: #a7ccff;
+@purple-box: #d6b3e4;
+@dark-blue: #2e66b2;
+@dark-purple: #7f479d;
+@heading-font: 'Asap', sans-serif;
+@body-font: 'Montserrat', sans-serif;
+
+.content-row() {
+  display: flex;
+  width: @content-width;
+  background: white;
+}
+
+.content-header() {
+  font-family: @heading-font;
+  color: @dark-blue;
+  font-size: 2em;
+  text-transform: lowercase;
+  padding: 1.5% 0;
+}
+
+.centered() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* My CSS Styling Starts Here */
+body {
+  background-image: url('../images/pattern-1899175_1920.jpg');
+  overflow: visible;
+  .centered();
+
+  @media (max-height: 700px) {
+    height: auto;
+  }
+}
+
+main {
+  padding: 0 1% 1%;
+  background-color: white;
+}
+
+section {
+  margin: 0.75%;
+  .centered();
+  flex-direction: column;
+  padding: 1.5%;
+  text-align: center;
+}
+
+h5 {
+  font-family: @body-font;
+  letter-spacing: -0.5px;
+  line-height: 1.4;
+}
+
+header {
+  width: @content-width;
+  background: white;
+
+  nav {
+    display: flex;
+    width: @content-width;
+    justify-content: space-around;
+    margin: 1.5% 0 1%;
+
+    @media (max-width: 500px) {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .blue-nav {
+      background-color: @dark-blue;
+      border: 3px solid @blue-box;
+    }
+
+    .purple-nav {
+      background-color: @dark-purple;
+      border: 3px solid @purple-box;
+    }
+
+    a {
+      border-radius: 15px;
+      padding: 0.5% 2%;
+      width: 20%;
+      font-family: @body-font;
+      text-decoration: none;
+      color: white;
+      text-align: center;
+
+      @media (max-width: 500px) {
+        width: 95%;
+        margin: 0.5%;
+        padding: 1% 0;
+      }
+    }
+  }
+}
+
+.row-one {
+  .content-row();
+
+  h1 {
+    text-transform: lowercase;
+    color: #7f479d;
+    font-weight: bold;
+    font-size: 4rem;
+    font-family: @heading-font;
+    letter-spacing: 1.5px;
+  }
+
+  h3 {
+    color: white;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: @body-font;
+    letter-spacing: 2px;
+  }
+
+  .name {
+    background-color: @purple-box;
+    width: 65%;
+    flex-direction: column;
+  }
+
+  .portrait {
+    background-color: @blue-box;
+    width: 35%;
+
+    img {
+      border-radius: 50%;
+      width: 175px;
+    }
+  }
+}
+
+.row-two {
+  .content-row();
+  @media (max-width: 800px) {
+    flex-direction: column;
+  }
+
+  .intro {
+    background-color: @blue-box;
+    width: 50%;
+
+    @media (max-width: 800px) {
+      width: 100%;
+    }
+
+    h2 {
+      .content-header();
+      color: @dark-blue;
+    }
+
+    p {
+      font-family: @body-font;
+      text-align: center;
+      padding: 2%;
+      line-height: 1.2;
+      color: black;
+    }
+  }
+
+  .work-history {
+    background-color: @purple-box;
+    width: 50%;
+
+    @media (max-width: 800px) {
+      width: 100%;
+    }
+
+    h2 {
+      .content-header();
+      color: @dark-purple;
+    }
+
+    .job {
+      padding: 2% 0;
+      h4 {
+        //text-transform: uppercase;
+        color: white;
+        font-family: @heading-font;
+        font-size: 1.5rem;
+        padding: 2% 0;
+      }
+
+      h5 {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+.row-three {
+  .content-row();
+  @media (max-width: 800px) {
+    flex-direction: column;
+  }
+
+  .contact-info {
+    background-color: @purple-box;
+    width: 35%;
+
+    @media (max-width: 800px) {
+      width: 100%;
+    }
+
+    h2 {
+      .content-header();
+      color: @dark-purple;
+    }
+  }
+
+  .skills {
+    background-color: @blue-box;
+    width: 65%;
+
+    @media (max-width: 800px) {
+      width: 100%;
+      order: -1;
+    }
+
+    h2 {
+      .content-header();
+      color: @dark-blue;
+    }
+  }
+}

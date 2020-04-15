@@ -1,1 +1,239 @@
-/* Compile your LESS file! */
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  box-sizing: border-box;
+  font: inherit;
+  max-width: 100%;
+}
+html,
+body {
+  height: 100%;
+}
+/* fonts */
+@font-face {
+  font-family: 'Asap';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local('Asap Medium'), local('Asap-Medium'), url(https://fonts.gstatic.com/s/asap/v11/KFOnCniXp96aw8g9xUw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Montserrat Regular'), local('Montserrat-Regular'), url(https://fonts.gstatic.com/s/montserrat/v14/JTUSjIg1_i6t8kCHKm45xW4.ttf) format('truetype');
+}
+/* Variables and mix-ins */
+/* My CSS Styling Starts Here */
+body {
+  background-image: url('../images/pattern-1899175_1920.jpg');
+  overflow: visible;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-height: 700px) {
+  body {
+    height: auto;
+  }
+}
+main {
+  padding: 0 1% 1%;
+  background-color: white;
+}
+section {
+  margin: 0.75%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1.5%;
+  text-align: center;
+}
+h5 {
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: -0.5px;
+  line-height: 1.4;
+}
+header {
+  width: 800px;
+  background: white;
+}
+header nav {
+  display: flex;
+  width: 800px;
+  justify-content: space-around;
+  margin: 1.5% 0 1%;
+}
+@media (max-width: 500px) {
+  header nav {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+header nav .blue-nav {
+  background-color: #2e66b2;
+  border: 3px solid #a7ccff;
+}
+header nav .purple-nav {
+  background-color: #7f479d;
+  border: 3px solid #d6b3e4;
+}
+header nav a {
+  border-radius: 15px;
+  padding: 0.5% 2%;
+  width: 20%;
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+}
+@media (max-width: 500px) {
+  header nav a {
+    width: 95%;
+    margin: 0.5%;
+    padding: 1% 0;
+  }
+}
+.row-one {
+  display: flex;
+  width: 800px;
+  background: white;
+}
+.row-one h1 {
+  text-transform: lowercase;
+  color: #7f479d;
+  font-weight: bold;
+  font-size: 4rem;
+  font-family: 'Asap', sans-serif;
+  letter-spacing: 1.5px;
+}
+.row-one h3 {
+  color: white;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 2px;
+}
+.row-one .name {
+  background-color: #d6b3e4;
+  width: 65%;
+  flex-direction: column;
+}
+.row-one .portrait {
+  background-color: #a7ccff;
+  width: 35%;
+}
+.row-one .portrait img {
+  border-radius: 50%;
+  width: 175px;
+}
+.row-two {
+  display: flex;
+  width: 800px;
+  background: white;
+}
+@media (max-width: 800px) {
+  .row-two {
+    flex-direction: column;
+  }
+}
+.row-two .intro {
+  background-color: #a7ccff;
+  width: 50%;
+}
+@media (max-width: 800px) {
+  .row-two .intro {
+    width: 100%;
+  }
+}
+.row-two .intro h2 {
+  font-family: 'Asap', sans-serif;
+  font-size: 2em;
+  text-transform: lowercase;
+  padding: 1.5% 0;
+  color: #2e66b2;
+}
+.row-two .intro p {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  padding: 2%;
+  line-height: 1.2;
+  color: black;
+}
+.row-two .work-history {
+  background-color: #d6b3e4;
+  width: 50%;
+}
+@media (max-width: 800px) {
+  .row-two .work-history {
+    width: 100%;
+  }
+}
+.row-two .work-history h2 {
+  font-family: 'Asap', sans-serif;
+  color: #2e66b2;
+  font-size: 2em;
+  text-transform: lowercase;
+  padding: 1.5% 0;
+  color: #7f479d;
+}
+.row-two .work-history .job {
+  padding: 2% 0;
+}
+.row-two .work-history .job h4 {
+  color: white;
+  font-family: 'Asap', sans-serif;
+  font-size: 1.5rem;
+  padding: 2% 0;
+}
+.row-two .work-history .job h5 {
+  font-size: 0.9rem;
+}
+.row-three {
+  display: flex;
+  width: 800px;
+  background: white;
+}
+@media (max-width: 800px) {
+  .row-three {
+    flex-direction: column;
+  }
+}
+.row-three .contact-info {
+  background-color: #d6b3e4;
+  width: 35%;
+}
+@media (max-width: 800px) {
+  .row-three .contact-info {
+    width: 100%;
+  }
+}
+.row-three .contact-info h2 {
+  font-family: 'Asap', sans-serif;
+  color: #2e66b2;
+  font-size: 2em;
+  text-transform: lowercase;
+  padding: 1.5% 0;
+  color: #7f479d;
+}
+.row-three .skills {
+  background-color: #a7ccff;
+  width: 65%;
+}
+@media (max-width: 800px) {
+  .row-three .skills {
+    width: 100%;
+    order: -1;
+  }
+}
+.row-three .skills h2 {
+  font-family: 'Asap', sans-serif;
+  font-size: 2em;
+  text-transform: lowercase;
+  padding: 1.5% 0;
+  color: #2e66b2;
+}
